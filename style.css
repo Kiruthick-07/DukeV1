@@ -501,13 +501,33 @@ body {
 .heading-line[data-line="3"].loaded { transition-delay: 0.94s; }
 .heading-line[data-line="4"].loaded { transition-delay: 1.07s; }
 
-/* "Software" — warm gold gradient */
-.accent-line em {
+/* Chalk-style words — Caveat handwritten font */
+.chalk-word {
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
     font-style: normal;
-    background: linear-gradient(125deg, #f0c870 0%, #d4a040 55%, #c08830 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #ffffff;
+    display: inline-block;
+    /* Subtle rough underline using SVG data URI — mimics chalk stroke */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='8' viewBox='0 0 200 8'%3E%3Cpath d='M2 5 Q20 2 40 5 Q60 8 80 4 Q100 1 120 5 Q140 8 160 4 Q180 2 198 5' stroke='rgba(255,255,255,0.55)' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 100% 8px;
+    padding-bottom: 6px;
+    /* Slight tilt for natural handwritten feel */
+    transform: rotate(-1.5deg);
+    transform-origin: left bottom;
+    letter-spacing: 0.01em;
+    /* Slightly larger than the surrounding sans-serif */
+    font-size: 1.12em;
+}
+
+.chalk-word--large {
+    font-size: 1.08em;
+    transform: rotate(-1deg);
+    /* Gold-tinted for Software to maintain brand accent */
+    color: #f0e8d0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='8' viewBox='0 0 200 8'%3E%3Cpath d='M2 5 Q25 2 50 5 Q75 8 100 3 Q125 1 150 5 Q175 8 198 4' stroke='rgba(212,160,64,0.6)' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
 }
 
 /* ── Description ────────────────────────────────────────────── */
@@ -678,9 +698,7 @@ body {
 
 /* ── Service Chips ──────────────────────────────────────────── */
 .float-services {
-    position: absolute;
-    bottom: 48px;
-    left: clamp(36px, 6vw, 96px);
+    margin-top: clamp(24px, 4vw, 40px);
     z-index: 12;
     display: flex;
     gap: 8px;
@@ -1195,6 +1213,23 @@ section.section:nth-of-type(even)::before {
 /* ── Contact Section ────────────────────────────────────────── */
 .section-contact {
     padding-top: clamp(120px, 14vw, 220px);
+    position: relative;
+    overflow: hidden;
+}
+
+#contactGlobe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.section-contact .section-container {
+    position: relative;
+    z-index: 1;
 }
 
 .contact-grid {
@@ -1421,7 +1456,6 @@ section.section:nth-of-type(even)::before {
     .btn { width: 100%; justify-content: center; }
 
     .float-card--globe { display: none; }
-    .float-services { left: 20px; bottom: 60px; }
     .orbital-svg { width: 310px; height: 310px; right: -22%; }
 }
 

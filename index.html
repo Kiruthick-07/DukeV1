@@ -7,7 +7,7 @@
     <title>FLUXR.IN — Premium Digital Studio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -77,8 +77,8 @@
 
             <!-- Main Heading -->
             <h1 class="hero-heading" id="heroHeading">
-                <span class="heading-line" data-line="1">We Craft</span>
-                <span class="heading-line accent-line" data-line="2"><em>Software</em></span>
+                <span class="heading-line" data-line="1">We <span class="chalk-word">Craft</span></span>
+                <span class="heading-line accent-line" data-line="2"><span class="chalk-word chalk-word--large">Software</span></span>
                 <span class="heading-line" data-line="3">That Moves Your</span>
                 <span class="heading-line" data-line="4">Business.</span>
             </h1>
@@ -99,6 +99,13 @@
                 </a>
             </div>
 
+            <!-- Floating Services Chips 
+            <div class="float-services" id="floatServices">
+                <span class="service-chip">Websites</span>
+                <span class="service-chip">Web Apps</span>
+                <span class="service-chip">Digital Products</span>
+            </div>
+-->
         </div>
 
         <!-- Floating Card — Near Globe (top-right area) -->
@@ -107,13 +114,6 @@
             <p class="float-card-label">Building Future</p>
             <p class="float-card-title">Digital Solutions</p>
             <p class="float-card-sub">for growing businesses</p>
-        </div>
-
-        <!-- Floating Services Chips — Bottom Left -->
-        <div class="float-services" id="floatServices">
-            <span class="service-chip">Websites</span>
-            <span class="service-chip">Web Apps</span>
-            <span class="service-chip">Digital Products</span>
         </div>
 
         <!-- Scroll Indicator -->
@@ -256,6 +256,7 @@
 
     <!-- Section 05 - Contact -->
     <section class="section section-contact" id="contact">
+        <canvas id="contactGlobe"></canvas>
         <div class="section-container">
             <div class="contact-grid">
                 <div class="contact-main fade-up">
@@ -308,5 +309,6 @@
     <div class="cursor-view-project" id="cursorViewProject">VIEW<br>PROJECT<br>↗</div>
 
     <script src="script.js"></script>
+    <script src="globe.js"></script>
 </body>
 </html>
