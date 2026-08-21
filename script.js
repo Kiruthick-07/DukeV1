@@ -368,6 +368,65 @@
     }
 
     /* ================================================================
+       7.5. NAVBAR SCROLL SHOW/HIDE
+    ================================================================ */
+    function initNavbar() {
+        const nav = document.getElementById('glassNav');
+        if (!nav) return;
+
+        let lastScrollY = 0;
+        let ticking = false;
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    const currentScrollY = window.scrollY;
+                    const heroH = window.innerHeight;
+
+                    /* Add scrolled class after leaving hero */
+                    if (currentScrollY > heroH * 0.3) {
+                        nav.classList.add('nav-scrolled');
+                    } else {
+                        nav.classList.remove('nav-scrolled');
+                    }
+
+                    /* Hide on scroll down, show on scroll up */
+                    if (currentScrollY > lastScrollY && currentScrollY > 200) {
+                        nav.classList.add('nav-hidden');
+                    } else {
+                        nav.classList.remove('nav-hidden');
+                    }
+
+                    lastScrollY = currentScrollY;
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+    }
+
+    /* ================================================================
+       7.6. APPROACH TIMELINE SCROLL PROGRESS
+    ================================================================ */
+    function initApproachProgress() {
+        if (prefersReducedMotion()) return;
+
+        const timeline = document.querySelector('.approach-timeline');
+        if (!timeline) return;
+
+        window.addEventListener('scroll', () => {
+            const rect = timeline.getBoundingClientRect();
+            const viewH = window.innerHeight;
+            /* Progress: 0 when top enters viewport, 1 when bottom leaves */
+            const start = viewH * 0.8;
+            const end = viewH * 0.2;
+            const total = start - end;
+            const progress = Math.max(0, Math.min(1, (start - rect.top) / total));
+            timeline.style.setProperty('--approach-progress', progress);
+        }, { passive: true });
+    }
+
+    /* ================================================================
        8. SCROLL REVEAL ANIMATIONS
     ================================================================ */
     function initScrollReveal() {
@@ -402,6 +461,8 @@
         initMagneticButtons();
         initParticles();
         initScrollParallax();
+        initNavbar();
+        initApproachProgress();
         initScrollReveal();
     }
 
