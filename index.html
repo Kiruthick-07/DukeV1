@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FLUXR.IN — Premium digital studio crafting modern software, web apps and digital experiences that help businesses grow, scale and stand out.">
+    <title>FLUXR.IN — Premium Digital Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+
+        <!-- Video Background -->
+        <video
+            autoplay
+            muted
+            loop
+            playsinline
+            id="hero-video"
+            aria-hidden="true"
+        >
+            <source src="videos/globe_with_lensflare.mp4" type="video/mp4">
+        </video>
+
+        <!-- Atmospheric Overlays -->
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="hero-glow-left" aria-hidden="true"></div>
+        <div class="hero-glow-globe" id="heroGlowGlobe" aria-hidden="true"></div>
+
+        <!-- Subtle Grid -->
+        <div class="hero-grid" aria-hidden="true"></div>
+
+        <!-- Particle Canvas -->
+        <canvas class="hero-particles" id="particleCanvas" aria-hidden="true"></canvas>
+
+        <!-- Orbital SVG Lines around globe -->
+        <svg class="orbital-svg" id="orbitalSvg" viewBox="0 0 400 400" aria-hidden="true">
+            <ellipse cx="200" cy="200" rx="190" ry="60" class="orbital-ring" />
+            <ellipse cx="200" cy="200" rx="150" ry="40" class="orbital-ring orbital-ring--2" />
+            <ellipse cx="200" cy="200" rx="190" ry="120" class="orbital-ring orbital-ring--3" />
+        </svg>
+
+        <!-- Navigation -->
+        <nav class="glass-nav" id="glassNav" aria-label="Primary navigation">
+            <div class="nav-inner">
+                <a href="#" class="nav-brand" aria-label="FLUXR.IN home">FLUXR.IN</a>
+                <ul class="nav-links" role="list">
+                    <li><a href="#work" class="nav-link">Work</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <a href="#contact" class="nav-cta magnetic-btn" id="navCta">
+                    Let's Talk <span class="arrow" aria-hidden="true">↗</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Hero Content — Left Column -->
+        <div class="hero-content" id="heroContent">
+
+            <!-- Eyebrow Label -->
+            <div class="eyebrow" id="eyebrow">
+                <span class="eyebrow-dot" aria-hidden="true"></span>
+                <span class="eyebrow-text">Digital Solutions Studio</span>
+                <span class="eyebrow-line" aria-hidden="true"></span>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="hero-heading" id="heroHeading">
+                <span class="heading-line" data-line="1">We Craft</span>
+                <span class="heading-line accent-line" data-line="2"><em>Software</em></span>
+                <span class="heading-line" data-line="3">That Moves Your</span>
+                <span class="heading-line" data-line="4">Business.</span>
+            </h1>
+
+            <!-- Description -->
+            <p class="hero-description" id="heroDesc">
+                We design and develop modern websites, web apps and digital
+                experiences that help businesses grow, scale and stand out.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="hero-ctas" id="heroCtas">
+                <a href="#contact" class="btn btn-primary magnetic-btn" id="ctaPrimary">
+                    Start a Project <span class="arrow" aria-hidden="true">↗</span>
+                </a>
+                <a href="#work" class="btn btn-secondary magnetic-btn" id="ctaSecondary">
+                    View Our Work
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Floating Card — Near Globe (top-right area) -->
+        <div class="float-card float-card--globe" id="floatCardGlobe">
+            <div class="float-card-dot" aria-hidden="true"></div>
+            <p class="float-card-label">Building Future</p>
+            <p class="float-card-title">Digital Solutions</p>
+            <p class="float-card-sub">for growing businesses</p>
+        </div>
+
+        <!-- Floating Services Chips — Bottom Left -->
+        <div class="float-services" id="floatServices">
+            <span class="service-chip">Websites</span>
+            <span class="service-chip">Web Apps</span>
+            <span class="service-chip">Digital Products</span>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator" id="scrollIndicator" aria-label="Scroll to explore">
+            <span class="scroll-text">Scroll to Explore</span>
+            <div class="scroll-line">
+                <div class="scroll-line-inner"></div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Section 02 - Capabilities -->
+    <section class="section section-capabilities" id="services">
+        <div class="section-container">
+            <div class="section-header fade-up">
+                <span class="section-number">02 / CAPABILITIES</span>
+                <h2 class="section-title">
+                    Digital<br>
+                    <span class="editorial-accent">Solutions</span>
+                </h2>
+                <p class="section-desc">
+                    We combine aesthetic precision with technical robustness to build products that stand the test of time.
+                </p>
+            </div>
+            <div class="capabilities-grid">
+                <div class="cap-card fade-up">
+                    <div class="cap-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                    </div>
+                    <h3 class="cap-title">UI/UX Design</h3>
+                    <p class="cap-text">Crafting intuitive interfaces that guide users effortlessly through digital journeys.</p>
+                </div>
+                <div class="cap-card cap-card--offset-1 fade-up">
+                    <div class="cap-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                    </div>
+                    <h3 class="cap-title">Mobile First</h3>
+                    <p class="cap-text">Responsive experiences that feel native on every device and screen size.</p>
+                </div>
+                <div class="cap-card cap-card--offset-2 fade-up">
+                    <div class="cap-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    </div>
+                    <h3 class="cap-title">Web Development</h3>
+                    <p class="cap-text">Robust, scalable front-end solutions built with modern frameworks.</p>
+                </div>
+                <div class="cap-card cap-card--offset-3 fade-up">
+                    <div class="cap-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                    </div>
+                    <h3 class="cap-title">3D & Motion</h3>
+                    <p class="cap-text">Immersive interactions that add depth and character to your brand.</p>
+                </div>
+            </div>
+            <div class="section-divider fade-up"></div>
+        </div>
+    </section>
+
+    <!-- Section 03 - Selected Work -->
+    <section class="section section-work" id="work">
+        <div class="section-container">
+            <div class="section-header section-header--flex fade-up">
+                <div>
+                    <span class="section-number">03 / SELECTED WORK</span>
+                    <h2 class="section-title">
+                        Curated<br>
+                        <span class="editorial-accent">Excellence</span>
+                    </h2>
+                </div>
+                <a href="#" class="view-all-link">VIEW ALL PROJECTS</a>
+            </div>
+            
+            <div class="work-grid">
+                <div class="project-card fade-up">
+                    <div class="project-image-wrapper">
+                        <img src="images/project1.png" alt="Nexus Analytics" class="project-image">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Nexus Analytics</h3>
+                        <div class="project-meta">
+                            <span class="project-category">WEB APPLICATION / UI UX</span>
+                            <span class="project-year">2026</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card project-card--offset fade-up">
+                    <div class="project-image-wrapper">
+                        <img src="images/project2.png" alt="Aethel 3D" class="project-image">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Aethel 3D</h3>
+                        <div class="project-meta">
+                            <span class="project-category">DIGITAL PRODUCT / 3D MOTION</span>
+                            <span class="project-year">2026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 04 - Approach -->
+    <section class="section section-approach" id="about">
+        <div class="section-container">
+            <div class="section-header fade-up">
+                <span class="section-number">04 / HOW WE WORK</span>
+                <h2 class="section-title">
+                    From Idea<br>
+                    <span class="editorial-accent">To Digital.</span>
+                </h2>
+            </div>
+            
+            <div class="approach-timeline">
+                <div class="approach-step fade-up">
+                    <span class="step-num">01 — DISCOVER</span>
+                    <p class="step-desc">Understand the business and problem.</p>
+                </div>
+                <div class="approach-step fade-up">
+                    <span class="step-num">02 — DESIGN</span>
+                    <p class="step-desc">Create the visual and interaction system.</p>
+                </div>
+                <div class="approach-step fade-up">
+                    <span class="step-num">03 — BUILD</span>
+                    <p class="step-desc">Develop the actual digital product.</p>
+                </div>
+                <div class="approach-step fade-up">
+                    <span class="step-num">04 — LAUNCH</span>
+                    <p class="step-desc">Refine, deploy and deliver.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 05 - Contact -->
+    <section class="section section-contact" id="contact">
+        <div class="section-container">
+            <div class="contact-grid">
+                <div class="contact-main fade-up">
+                    <h2 class="contact-title">
+                        Let's<br>
+                        <span class="editorial-accent">Talk</span>
+                    </h2>
+                    
+                    <div class="contact-cta">
+                        <a href="mailto:hello@fluxr.in" class="cta-circle-btn magnetic-btn">
+                            <span class="arrow">↗</span>
+                        </a>
+                        <div class="cta-text">
+                            <span class="cta-primary">Start a Project</span>
+                            <span class="cta-status"><span class="status-dot"></span> WE ARE CURRENTLY AVAILABLE</span>
+                        </div>
+                    </div>
+                    
+                    <a href="mailto:hello@fluxr.in" class="contact-email">hello@fluxr.in</a>
+                </div>
+                
+                <div class="contact-footer fade-up">
+                    <div class="footer-col">
+                        <span class="footer-label">SOCIALS</span>
+                        <ul class="footer-links" role="list">
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">LinkedIn</a></li>
+                            <li><a href="#">Awwwards</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <span class="footer-label">SITEMAP</span>
+                        <ul class="footer-links" role="list">
+                            <li><a href="#hero">Home</a></li>
+                            <li><a href="#work">Work</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom fade-up">
+                <span class="copyright">© 2026 FLUXR.IN STUDIO.</span>
+                <span class="credits">DESIGNED BY FLUXR.</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="cursor-view-project" id="cursorViewProject">VIEW<br>PROJECT<br>↗</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
